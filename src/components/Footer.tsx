@@ -1,0 +1,41 @@
+import { Play } from 'lucide-react';
+
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="py-12 bg-primary text-primary-foreground">
+      <div className="container">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo */}
+          <a href="#home" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
+              <Play className="w-4 h-4 text-accent-foreground fill-current" />
+            </div>
+            <span className="font-display font-bold text-lg">
+              AI<span className="text-accent">Video</span>
+            </span>
+          </a>
+
+          {/* Links */}
+          <nav className="flex flex-wrap items-center justify-center gap-6">
+            <a href="#services" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Services
+            </a>
+            <a href="#portfolio" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Portfolio
+            </a>
+            <a href="#contact" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Contact
+            </a>
+          </nav>
+
+          {/* Copyright */}
+          <p className="text-sm text-primary-foreground/50">
+            © {currentYear} AIVideo. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
