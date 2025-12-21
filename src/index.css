@@ -106,6 +106,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.875rem, 4vw, 1rem);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -114,28 +115,8 @@
   }
 
   /* Responsive Typography */
-  h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
-    font-size: clamp(1.8rem, 5vw, 3rem);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  h3 {
-    @apply text-xl md:text-2xl;
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-  }
-
-  p, span, li {
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
-    line-height: 1.7;
+  h1, h2, h3 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
   }
 }
 
@@ -176,6 +157,35 @@
     box-shadow: var(--shadow-glow);
   }
 
+  .shadow-header {
+    box-shadow: 0 2px 10px rgba(220, 38, 38, 0.2);
+  }
+
+  /* Wave animation for PixMotion text */
+  .text-wave {
+    background: linear-gradient(90deg, #000000, #FFFFFF, #DC2626, #FFFFFF, #000000);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: wave 3s ease-in-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    .text-wave {
+      animation: wave 2s ease-in-out infinite;
+    }
+  }
+
+  /* Responsive text utilities */
+  .text-heading {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .text-body {
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+
   /* Red glow hover effect */
   .glow-hover {
     @apply transition-all duration-300;
@@ -184,6 +194,24 @@
   .glow-hover:hover {
     box-shadow: 0 0 25px hsl(0 84% 50% / 0.5);
     border-color: hsl(0 84% 50% / 0.8);
+  }
+
+  /* Red hover wave for cards */
+  .red-hover-wave {
+    @apply relative overflow-hidden;
+  }
+
+  .red-hover-wave::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(90deg, transparent, hsl(0 84% 50% / 0.2), transparent);
+    background-size: 200% 100%;
+    animation: card-wave 2s ease-in-out infinite paused;
+  }
+
+  .red-hover-wave:hover::before {
+    @apply opacity-100;
+    animation-play-state: running;
   }
 
   /* Red underline effect for links */
@@ -209,6 +237,28 @@
   /* Red text accent */
   .text-red-accent {
     @apply text-accent;
+  }
+}
+
+/* Wave keyframe animation */
+@keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes card-wave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
 

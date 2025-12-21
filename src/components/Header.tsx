@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Play } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navItems = [
@@ -11,33 +11,15 @@ const navItems = [
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-card/95 backdrop-blur-md shadow-card py-3'
-          : 'bg-transparent py-5'
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 h-[60px] bg-background shadow-header flex items-center">
       <div className="container flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-            <Play className="w-4 h-4 text-accent-foreground fill-current" />
-          </div>
-          <span className="font-display font-bold text-lg text-foreground">
-            AI<span className="text-accent">Video</span>
+        {/* Logo - Text Only with Wave Animation */}
+        <a href="#home" className="flex items-center">
+          <span className="font-display font-bold text-wave text-[1.75rem] md:text-[3rem]">
+            PixMotion
           </span>
         </a>
 
@@ -47,7 +29,7 @@ export function Header() {
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[0.9rem] font-medium text-foreground/80 hover:text-foreground transition-colors"
             >
               {item.label}
             </a>
@@ -79,7 +61,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                className="text-[0.9rem] font-medium text-foreground/80 hover:text-foreground transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
