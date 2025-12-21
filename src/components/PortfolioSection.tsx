@@ -78,7 +78,7 @@ export function PortfolioSection() {
               {/* Info */}
               <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <p className="text-xs text-accent font-medium">{item.category}</p>
-                <p className="text-sm font-medium text-primary-foreground truncate">{item.title}</p>
+                <p className="text-sm font-medium text-foreground truncate">{item.title}</p>
               </div>
             </div>
           ))}

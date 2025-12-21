@@ -51,7 +51,7 @@ export function ContactSection() {
                   className="flex items-center gap-4 p-4 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 transition-colors group"
                 >
                   <div className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-primary-foreground" />
+                    <MessageCircle className="w-6 h-6 text-foreground" />
                   </div>
                   <div className="flex-1">
                     <p className="font-medium text-foreground">WhatsApp</p>

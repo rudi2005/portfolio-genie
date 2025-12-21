@@ -57,14 +57,14 @@ export function CategoriesSection() {
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-5">
                 <h3
-                  className={`font-display font-bold text-primary-foreground text-lg transition-transform duration-300 ${
+                  className={`font-display font-bold text-foreground text-lg transition-transform duration-300 ${
                     hoveredIndex === index ? 'translate-y-0' : 'translate-y-2'
                   }`}
                 >
                   {category.name}
                 </h3>
                 <p
-                  className={`text-sm text-primary-foreground/70 mt-1 transition-all duration-300 ${
+                  className={`text-sm text-accent mt-1 transition-all duration-300 ${
                     hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
