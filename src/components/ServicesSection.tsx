@@ -49,7 +49,7 @@ export function ServicesSection() {
           <p className="text-sm font-medium text-accent uppercase tracking-wider mb-3">
             Our Services
           </p>
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
+          <h2 className="font-display font-bold text-xl md:text-2xl text-foreground mb-4">
             📄 Quotation – Product Video Services
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
