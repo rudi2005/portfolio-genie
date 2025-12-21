@@ -31,21 +31,20 @@ export function HeroSection() {
 
             {/* Headline */}
             <h1
-              className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6 opacity-0 animate-slide-up"
+              className="font-display font-bold text-heading text-foreground leading-tight mb-6 opacity-0 animate-slide-up"
               style={{ animationDelay: '0.2s' }}
             >
-              Realistic AI Product Videos
+              <span className="text-wave inline-block">PixMotion</span>
               <br />
-              <span className="text-accent">That Convert</span> on Amazon & Flipkart
+              <span className="text-accent">AI-Powered</span> Video Creation
             </h1>
 
             {/* Subtext */}
             <p
-              className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 opacity-0 animate-fade-in"
+              className="text-body text-foreground max-w-xl mx-auto lg:mx-0 mb-8 opacity-0 animate-fade-in"
               style={{ animationDelay: '0.4s' }}
             >
-              Image to video • UGC reels • Ads-ready content for any product.
-              Perfect for e-commerce sellers, brands & creators.
+              AI-Powered Image-to-Video Magic for E-com Pros
             </p>
 
             {/* CTA Buttons */}
