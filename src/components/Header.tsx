@@ -14,22 +14,22 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-[60px] bg-background shadow-header flex items-center">
+    <header className="relative h-[50px] bg-black border-b border-accent/10 flex items-center">
       <div className="container flex items-center justify-between">
         {/* Logo - Text Only with Wave Animation */}
         <a href="#home" className="flex items-center">
-          <span className="font-display font-bold text-wave text-[1.5rem] md:text-[1.5rem]">
+          <span className="font-display font-medium text-wave text-[1.5rem] md:text-[2.5rem]">
             PixMotion
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-[0.9rem] font-medium text-foreground/80 hover:text-foreground transition-colors"
+              className="text-[0.8rem] font-medium text-foreground/80 hover:text-foreground transition-colors"
             >
               {item.label}
             </a>
@@ -38,7 +38,7 @@ export function Header() {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button variant="accent" size="sm" asChild>
+          <Button variant="accent" size="sm" className="text-xs px-3 py-1 h-7" asChild>
             <a href="#contact">Get a Demo</a>
           </Button>
         </div>
@@ -49,25 +49,25 @@ export function Header() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-md border-b border-border animate-fade-in">
-          <nav className="container py-4 flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-black/90 border-b border-accent/10 animate-fade-in">
+          <nav className="container py-3 flex flex-col gap-3">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-[0.9rem] font-medium text-foreground/80 hover:text-foreground transition-colors py-2"
+                className="text-[0.8rem] font-medium text-foreground/80 hover:text-foreground transition-colors py-1.5"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
               </a>
             ))}
-            <Button variant="accent" size="sm" className="w-full mt-2" asChild>
+            <Button variant="accent" size="sm" className="w-full mt-2 text-xs h-7" asChild>
               <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
                 Get a Demo
               </a>
