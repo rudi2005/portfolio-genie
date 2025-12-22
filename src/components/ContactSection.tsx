@@ -45,7 +45,7 @@ export function ContactSection() {
               {/* Quick Contact Options */}
               <div className="space-y-4">
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919641576101?text=Hello%20Rudra,%20I%20saw%20your%20website.%20I%20am%20interested%20in%20your%20UGC%20Ads%20and%20Product%20Preview%20services%20(Amazon/Flipkart).%20Can%20we%20discuss%20a%20project?"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 transition-colors group"
@@ -61,7 +61,9 @@ export function ContactSection() {
                 </a>
 
                 <a
-                  href="mailto:hello@aiproductvideo.com"
+                  href="mailto:rudrapal.x@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-xl bg-accent/10 hover:bg-accent/20 transition-colors group"
                 >
                   <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
@@ -69,7 +71,7 @@ export function ContactSection() {
                   </div>
                   <div className="flex-1">
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">hello@aiproductvideo.com</p>
+                    <p className="text-sm text-muted-foreground">rudrapal.x@gmail.com</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all" />
                 </a>
