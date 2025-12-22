@@ -1,27 +1,55 @@
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroVisual from '@/assets/hero-visual.png';
 
 export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center gradient-hero overflow-hidden pt-24 pb-16"
+      className="relative bg-background overflow-hidden pt-8 pb-16"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/8 rounded-full blur-3xl" />
-      </div>
-
       <div className="container relative z-10">
+        {/* Video Hero Section */}
+        <div className="text-center mb-8">
+          <h2 
+            className="font-display font-bold text-foreground mb-4 opacity-0 animate-fade-in text-[1.5rem] md:text-[2rem]"
+            style={{ animationDelay: '0.1s' }}
+          >
+            Watch How PixMotion Transforms Your Products
+          </h2>
+          <p 
+            className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto mb-6 opacity-0 animate-fade-in"
+            style={{ animationDelay: '0.2s' }}
+          >
+            AI-Powered Image-to-Video for E-com Pros – Low Cost, High Impact.
+          </p>
+        </div>
+
+        {/* Full-width Video Embed */}
+        <div 
+          className="w-full aspect-video rounded-xl overflow-hidden mb-8 opacity-0 animate-fade-in"
+          style={{ animationDelay: '0.3s' }}
+        >
+          <iframe
+            src="https://player.vimeo.com/video/1148553866?autoplay=0&title=0&byline=0&portrait=0"
+            className="w-full h-full"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="PixMotion Product Demo"
+          />
+        </div>
+
+        {/* Red Divider Line */}
+        <div className="w-full h-px bg-accent/30 mb-12" />
+
+        {/* Original Hero Content Below */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card shadow-card mb-6 opacity-0 animate-fade-in"
-              style={{ animationDelay: '0.1s' }}
+              style={{ animationDelay: '0.4s' }}
             >
               <Sparkles className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium text-muted-foreground">
@@ -32,7 +60,7 @@ export function HeroSection() {
             {/* Headline */}
             <h1
               className="font-display font-bold text-heading text-foreground leading-tight mb-6 opacity-0 animate-slide-up"
-              style={{ animationDelay: '0.2s' }}
+              style={{ animationDelay: '0.5s' }}
             >
               <span className="text-wave inline-block">PixMotion</span>
               <br />
@@ -42,7 +70,7 @@ export function HeroSection() {
             {/* Subtext */}
             <p
               className="text-body text-foreground max-w-xl mx-auto lg:mx-0 mb-8 opacity-0 animate-fade-in"
-              style={{ animationDelay: '0.4s' }}
+              style={{ animationDelay: '0.6s' }}
             >
               AI-Powered Image-to-Video Magic for E-com Pros
             </p>
@@ -50,7 +78,7 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 opacity-0 animate-fade-in"
-              style={{ animationDelay: '0.6s' }}
+              style={{ animationDelay: '0.7s' }}
             >
               <Button variant="accent" size="lg" className="group" asChild>
                 <a href="#portfolio">
@@ -83,17 +111,12 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Visual */}
+          {/* Right Visual - Hidden on mobile */}
           <div
             className="relative opacity-0 animate-fade-in-right hidden lg:block"
-            style={{ animationDelay: '0.4s' }}
+            style={{ animationDelay: '0.6s' }}
           >
             <div className="relative">
-              <img
-                src={heroVisual}
-                alt="AI Product Video Creation - E-commerce videos for Amazon, Flipkart"
-                className="w-full h-auto rounded-2xl"
-              />
               {/* Floating accent elements */}
               <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-accent/10 rounded-2xl blur-xl animate-float" />
               <div className="absolute -top-4 -right-4 w-32 h-32 bg-accent/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }} />
