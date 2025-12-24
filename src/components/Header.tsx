@@ -23,7 +23,7 @@ export function Header() {
       <div className="container flex items-center justify-between">
         {/* Logo - Text Only with Wave Animation */}
         <a href="#home" className="flex items-center">
-          <span className="font-display font-bold text-wave text-[1.5rem] md:text-[1.5rem]">
+          <span className="font-logo text-wave text-[1.4rem] md:text-[1.6rem] tracking-wider uppercase">
             Pix Motion
           </span>
         </a>

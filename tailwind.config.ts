@@ -73,6 +73,7 @@ export default {
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],
         display: ['Inter', 'sans-serif'],
+        logo: ['Audiowide', 'cursive'],
       },
       keyframes: {
         "accordion-down": {
