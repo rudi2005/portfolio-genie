@@ -22,23 +22,29 @@ const navItems = [{
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return <header className="fixed top-0 left-0 right-0 z-50 h-[60px] bg-background shadow-header flex items-center">
-      <div className="container flex items-center justify-between">
-        {/* Logo - Absolutely Centered with Ghost Animation & Sparkles */}
-        <a href="#home" className="absolute left-1/2 -translate-x-1/2 flex items-center px-4 py-2 md:static md:translate-x-0">
-          <LogoSparkles />
-          <span className="font-logo text-ghost text-[1.4rem] md:text-[1.6rem] tracking-wider uppercase relative z-10">
-            Pix Motion
-          </span>
-        </a>
-
-        {/* Mobile Menu Toggle - Right on mobile */}
+      <div className="container flex items-center justify-between relative">
+        {/* Mobile Menu Toggle - Left on mobile */}
         <button 
-          className="md:hidden p-2 text-foreground ml-auto" 
+          className="md:hidden p-2 text-foreground z-10" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
+
+        {/* Logo - Centered on mobile, left on desktop */}
+        <a 
+          href="#home" 
+          className="absolute left-1/2 -translate-x-1/2 md:relative md:left-0 md:translate-x-0 flex items-center gap-1 group"
+        >
+          <LogoSparkles />
+          <span className="font-logo text-pro text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] tracking-wide uppercase relative z-10">
+            Pix Motion
+          </span>
+        </a>
+
+        {/* Spacer for mobile layout balance */}
+        <div className="md:hidden w-10" />
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
