@@ -23,22 +23,22 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return <header className="fixed top-0 left-0 right-0 z-50 h-[60px] bg-background shadow-header flex items-center">
       <div className="container flex items-center justify-between">
-        {/* Mobile Menu Toggle - Left on mobile */}
+        {/* Logo - Absolutely Centered with Ghost Animation & Sparkles */}
+        <a href="#home" className="absolute left-1/2 -translate-x-1/2 flex items-center px-4 py-2 md:static md:translate-x-0">
+          <LogoSparkles />
+          <span className="font-logo text-ghost text-[1.4rem] md:text-[1.6rem] tracking-wider uppercase relative z-10">
+            Pix Motion
+          </span>
+        </a>
+
+        {/* Mobile Menu Toggle - Right on mobile */}
         <button 
-          className="md:hidden p-2 text-foreground" 
+          className="md:hidden p-2 text-foreground ml-auto" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
-
-        {/* Logo - Centered with Breathe Animation & Sparkles */}
-        <a href="#home" className="relative flex items-center absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 px-4 py-2">
-          <LogoSparkles />
-          <span className="font-logo text-breathe text-[1.4rem] md:text-[1.6rem] tracking-wider uppercase bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent bg-[length:200%_auto] relative z-10">
-            Pix Motion
-          </span>
-        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
@@ -54,8 +54,8 @@ export function Header() {
           </Button>
         </div>
 
-        {/* Spacer for mobile to balance layout */}
-        <div className="md:hidden w-10" />
+        {/* Spacer for mobile to balance layout - hidden on mobile now */}
+        <div className="hidden" />
       </div>
 
       {/* Mobile Menu */}
