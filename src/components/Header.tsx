@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { LogoSparkles } from '@/components/LogoSparkles';
+
 const navItems = [{
   label: 'Home',
   href: '#home'
@@ -30,9 +32,10 @@ export function Header() {
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* Logo - Centered with Breathe Animation */}
-        <a href="#home" className="flex items-center absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
-          <span className="font-logo text-breathe text-[1.4rem] md:text-[1.6rem] tracking-wider uppercase bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent bg-[length:200%_auto]">
+        {/* Logo - Centered with Breathe Animation & Sparkles */}
+        <a href="#home" className="relative flex items-center absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 px-4 py-2">
+          <LogoSparkles />
+          <span className="font-logo text-breathe text-[1.4rem] md:text-[1.6rem] tracking-wider uppercase bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent bg-[length:200%_auto] relative z-10">
             Pix Motion
           </span>
         </a>
