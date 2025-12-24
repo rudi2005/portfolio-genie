@@ -181,6 +181,12 @@ html {
     }
   }
 
+  /* Breathe animation for Logo */
+  .text-breathe {
+    animation: breathe 3s ease-in-out infinite, gradient-shift 4s ease-in-out infinite;
+    background-size: 200% auto;
+  }
+
   /* Responsive text utilities */
   .text-heading {
     font-size: clamp(1.25rem, 5vw, 1.75rem);
@@ -254,6 +260,31 @@ html {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Breathe keyframe animation */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+    letter-spacing: 0.05em;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+    letter-spacing: 0.1em;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% center;
+    filter: brightness(1) drop-shadow(0 0 8px hsl(0 84% 50% / 0.5));
+  }
+  50% {
+    background-position: 100% center;
+    filter: brightness(1.2) drop-shadow(0 0 15px hsl(0 84% 50% / 0.8));
   }
 }
 

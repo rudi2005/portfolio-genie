@@ -21,9 +21,18 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return <header className="fixed top-0 left-0 right-0 z-50 h-[60px] bg-background shadow-header flex items-center">
       <div className="container flex items-center justify-between">
-        {/* Logo - Text Only with Wave Animation */}
-        <a href="#home" className="flex items-center">
-          <span className="font-logo text-wave text-[1.4rem] md:text-[1.6rem] tracking-wider uppercase">
+        {/* Mobile Menu Toggle - Left on mobile */}
+        <button 
+          className="md:hidden p-2 text-foreground" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+        {/* Logo - Centered with Breathe Animation */}
+        <a href="#home" className="flex items-center absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+          <span className="font-logo text-breathe text-[1.4rem] md:text-[1.6rem] tracking-wider uppercase bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent bg-[length:200%_auto]">
             Pix Motion
           </span>
         </a>
@@ -42,10 +51,8 @@ export function Header() {
           </Button>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button className="md:hidden p-2 text-foreground" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Spacer for mobile to balance layout */}
+        <div className="md:hidden w-10" />
       </div>
 
       {/* Mobile Menu */}
